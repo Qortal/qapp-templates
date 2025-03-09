@@ -4,6 +4,7 @@ import {
 
 } from "react-router-dom";
 import App from "./App";
+import Layout from "./styles/Layout";
 
 
 // Use a custom type if you need it
@@ -19,7 +20,13 @@ export function Routes() {
     [
       {
         path: "/",
-        element: <App />,
+        element: <Layout />,
+        children: [
+          {
+            index: true,
+            element: <App />,
+          }
+        ],
       },
     ],
     {

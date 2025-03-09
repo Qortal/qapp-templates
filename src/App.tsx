@@ -1,8 +1,10 @@
+import { Typography } from "@mui/material"
+
 function App() {
 
   return (
     <>
-     hello
+     <Typography>Welcome to Qortal</Typography>
     </>
   )
 }
