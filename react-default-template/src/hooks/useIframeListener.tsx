@@ -1,25 +1,13 @@
 import { useEffect } from "react";
 import { To, useNavigate } from "react-router-dom";
-import { EnumTheme, useSystemState } from "../state/global/system";
 
-interface CustomWindow extends Window {
-  _qdnTheme: string;
-}
-const customWindow = window as unknown as CustomWindow;
 
 export const useIframe = () => {
-    const setTheme  = useSystemState().setTheme
   
   const navigate = useNavigate();
   useEffect(() => {
 
-    const themeColorDefault = customWindow?._qdnTheme
-        if(themeColorDefault === 'dark'){
-          setTheme(EnumTheme.DARK)
-        } else if(themeColorDefault === 'light'){
-          setTheme(EnumTheme.LIGHT)
-        }
-    function handleNavigation(event: { data: { action: string; path: To; theme: 'dark' | 'light' }; }) {
+    function handleNavigation(event: { data: { action: string; path: To }; }) {
       if (event.data?.action === "NAVIGATE_TO_PATH" && event.data.path) {
         navigate(event.data.path); // Navigate directly to the specified path
 
@@ -28,13 +16,6 @@ export const useIframe = () => {
           { action: "NAVIGATION_SUCCESS", path: event.data.path },
           "*"
         );
-      } else  if (event.data?.action === "THEME_CHANGED" && event.data.theme) {
-        const themeColor = event.data.theme
-        if(themeColor === 'dark'){
-          setTheme(EnumTheme.DARK)
-        } else if(themeColor === 'light'){
-          setTheme(EnumTheme.LIGHT)
-        }
       }
     }
 
@@ -43,6 +24,6 @@ export const useIframe = () => {
     return () => {
       window.removeEventListener("message", handleNavigation);
     };
-  }, [navigate, setTheme]);
+  }, [navigate]);
   return { navigate };
 };

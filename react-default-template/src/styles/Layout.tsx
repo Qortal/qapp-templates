@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
+import { useIframe } from "../hooks/useIframeListener";
 
 
 const Layout = () => {
+  useIframe()
   return (
     <>
     {/* Add Header here */}
