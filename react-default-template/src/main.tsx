@@ -8,21 +8,21 @@ import { publicSalt } from "./qapp-config.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <GlobalProvider
-      config={{
-        auth: {
-          balanceSetting: {
-            interval: 180000,
-            onlyOnMount: false,
+    <ThemeProviderWrapper>
+      <GlobalProvider
+        config={{
+          auth: {
+            balanceSetting: {
+              interval: 180000,
+              onlyOnMount: false,
+            },
+            authenticateOnMount: true,
           },
-          authenticateOnMount: true,
-        },
-        publicSalt: publicSalt
-      }}
-    >
-      <ThemeProviderWrapper>
+          publicSalt: publicSalt,
+        }}
+      >
         <Routes />
-      </ThemeProviderWrapper>
-    </GlobalProvider>
+      </GlobalProvider>
+    </ThemeProviderWrapper>
   </StrictMode>
 );
