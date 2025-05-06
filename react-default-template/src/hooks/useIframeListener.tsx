@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { To, useNavigate } from "react-router-dom";
-import { EnumTheme, useSystemState } from "../state/global/system";
+import { EnumTheme, themeAtom } from "../state/global/system";
+import { useSetAtom } from "jotai";
 
 interface CustomWindow extends Window {
   _qdnTheme: string;
@@ -8,7 +9,8 @@ interface CustomWindow extends Window {
 const customWindow = window as unknown as CustomWindow;
 
 export const useIframe = () => {
-    const setTheme  = useSystemState().setTheme
+    const  setTheme = useSetAtom(themeAtom);
+
   
   const navigate = useNavigate();
   useEffect(() => {
