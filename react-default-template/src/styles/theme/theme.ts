@@ -1,45 +1,44 @@
-import { createTheme } from "@mui/material/styles";
-
+import { createTheme } from '@mui/material/styles';
 
 const commonThemeOptions = {
   typography: {
-    fontFamily: ["Inter"].join(","),
+    fontFamily: ['Inter'].join(','),
     h1: {
-      fontSize: "2rem",
+      fontSize: '2rem',
       fontWeight: 600,
     },
     h2: {
-      fontSize: "1.75rem",
+      fontSize: '1.75rem',
       fontWeight: 500,
     },
     h3: {
-      fontSize: "1.5rem",
+      fontSize: '1.5rem',
       fontWeight: 500,
     },
     h4: {
-      fontSize: "1.25rem",
+      fontSize: '1.25rem',
       fontWeight: 500,
     },
     h5: {
-      fontSize: "1rem",
+      fontSize: '1rem',
       fontWeight: 500,
     },
     h6: {
-      fontSize: "0.875rem",
+      fontSize: '0.875rem',
       fontWeight: 500,
     },
     body1: {
-      fontSize: "23px",
+      fontSize: '1rem',
       fontWeight: 400,
       lineHeight: 1.5,
-      letterSpacing: "0.5px",
+      letterSpacing: '0.5px',
     },
 
     body2: {
-      fontSize: "18px",
+      fontSize: '0.875rem',
       fontWeight: 400,
       lineHeight: 1.4,
-      letterSpacing: "0.2px",
+      letterSpacing: '0.2px',
     },
   },
   spacing: 8,
@@ -55,12 +54,17 @@ const commonThemeOptions = {
       xl: 1536,
     },
   },
-  components: {
-    MuiModal: {
-      styleOverrides: {
-        root: {
-          zIndex: 50000,
-        },
+  MuiDialog: {
+    styleOverrides: {
+      paper: {
+        backgroundImage: 'none',
+      },
+    },
+  },
+  MuiPopover: {
+    styleOverrides: {
+      paper: {
+        backgroundImage: 'none',
       },
     },
   },
@@ -69,89 +73,46 @@ const commonThemeOptions = {
 const lightTheme = createTheme({
   ...commonThemeOptions,
   palette: {
-    mode: "light",
+    mode: 'light',
     primary: {
-      main: "rgb(40, 84, 76)",
-      light: "rgb(123, 158, 143)",
-      dark: "rgb(5, 10, 11)",
-      contrastText: "rgb(199, 210, 218)",
+      main: 'rgb(63, 81, 181)',
+      dark: 'rgb(113, 198, 212)',
+      light: 'rgb(180, 200, 235)',
     },
     secondary: {
-      main: "rgb(65, 143, 75)",
-      dark: "rgba(69, 114, 87, 0.67)",
-    },
-    error: {
-      main: "rgba(148, 23, 16, 1)",
-    },
-    text: {
-      primary: "rgba(4,6,6,0.87)",
-      secondary: "rgb(113, 122, 124)",
-    },
-    info: {
-      main: "rgb(8, 155, 152)",
+      main: 'rgba(194, 222, 236, 1)',
     },
     background: {
-      default: "rgb(233, 233, 233)",
-      paper: "rgb(186, 186, 186)",
+      default: 'rgba(250, 250, 250, 1)',
+      paper: 'rgb(220, 220, 220)', // darker card background
     },
-    action: {
-      hover: "rgba(58, 81, 64, 0.27)",
-      selected: "rgba(31, 93, 124, 0.29)",
-    
+    text: {
+      primary: 'rgba(0, 0, 0, 0.87)', // 87% black (slightly softened)
+      secondary: 'rgba(0, 0, 0, 0.6)', // 60% black
     },
-  },
-
-  typography: {
-    fontWeightMedium: 600,
-    h1: {
-      fontFamily: "Droid Sans",
-    },
-    fontSize: 16,
-    fontFamily: "Inter",
   },
 });
 
 const darkTheme = createTheme({
   ...commonThemeOptions,
   palette: {
-    mode: "dark",
+    mode: 'dark',
     primary: {
-      main: "rgba(70, 95, 107, 0.98)",
-      light: "rgba(126, 160, 170, 0.96)",
-      dark: "rgba(104, 108, 116, 0.98)",
-      contrastText: "rgba(215, 225, 222, 0.97)",
+      main: 'rgb(100, 155, 240)',
+      dark: 'rgb(45, 92, 201)',
+      light: 'rgb(130, 185, 255)',
     },
     secondary: {
-      main: "rgba(133, 186, 150, 0.95)",
-      dark: " #33445566 "
-    },
-    error: {
-      main: "rgba(212, 11, 42, 0.94)",
-    },
-    text: {
-      primary: "rgba(255, 255, 255, 0.87)",
-      secondary: "rgba(116, 143, 127, 0.93)",
-    },
-    info: {
-      main: "rgba(33,220,243,0.87)",
+      main: 'rgb(69, 173, 255)',
     },
     background: {
-      default: "rgb(15, 16, 16)",
-      paper: "rgb(29, 35, 36)",
+      default: 'rgb(49, 51, 56)',
+      paper: 'rgb(62, 64, 68)',
     },
-    action: {
-      hover: "rgba(47, 58, 64, 0.73)", // darker than the default 0.04
-      selected: "rgba(80, 125, 159, 0.61)",
+    text: {
+      primary: 'rgb(255, 255, 255)',
+      secondary: 'rgb(179, 179, 179)',
     },
-    divider: "rgba(89, 89, 89, 0.76)",
-  },
-  typography: {
-    fontWeightMedium: 600,
-    h1: {
-      fontFamily: "Droid Sans",
-    },
-    fontSize: 16,
-    fontFamily: "Inter",
   },
 });
 
