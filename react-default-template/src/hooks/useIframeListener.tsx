@@ -17,7 +17,6 @@ export const useIframe = () => {
   
   const navigate = useNavigate();
   useEffect(() => {
-    console.log('customWindow', customWindow?._qdnTheme)
     const themeColorDefault = customWindow?._qdnTheme
         if(themeColorDefault === 'dark'){
           setTheme(EnumTheme.DARK)
