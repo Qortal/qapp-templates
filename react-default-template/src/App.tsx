@@ -1,14 +1,13 @@
-import { Typography } from "@mui/material"
-import { useGlobal } from "qapp-core"
+import { Typography } from '@mui/material';
+import { useGlobal } from 'qapp-core';
 
- 
 function App() {
-  const {auth} = useGlobal()
+  const { auth } = useGlobal();
   return (
     <>
-     <Typography>Welcome to Qortal {auth?.name}</Typography>
+      <Typography>Welcome to Qortal {auth?.name}</Typography>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

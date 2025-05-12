@@ -1,1 +1,1 @@
-Works in conjunction with the npm package create-qortal
+Works in conjunction with the npm package `create-qortal-app`.

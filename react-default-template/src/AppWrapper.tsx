@@ -1,6 +1,6 @@
-import { Routes } from "./Routes";
-import { GlobalProvider } from "qapp-core";
-import { publicSalt } from "./qapp-config.ts";
+import { Routes } from './routes/Routes.tsx';
+import { GlobalProvider } from 'qapp-core';
+import { publicSalt } from './qapp-config.ts';
 
 export const AppWrapper = () => {
   return (
