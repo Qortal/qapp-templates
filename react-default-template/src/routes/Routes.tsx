@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
-import Layout from './styles/Layout';
+import Layout from '../styles/Layout';
+import App from '../App';
 
 // Use a custom type if you need it
 interface CustomWindow extends Window {
