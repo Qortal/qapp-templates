@@ -2,20 +2,23 @@ import { useEffect } from 'react';
 import { To, useNavigate } from 'react-router-dom';
 import {
   EnumTheme,
-  Language,
-  languageAtom,
   themeAtom,
 } from '../state/global/system';
 import { useSetAtom } from 'jotai';
+import { useTranslation } from 'react-i18next';
+import { supportedLanguages } from '../i18n/i18n';
+
+type Language = 'de' | 'en' | 'es' | 'fr' | 'it' | 'ru';
+type Theme = 'dark' | 'light'
 interface CustomWindow extends Window {
-  _qdnTheme: string;
+  _qdnTheme: Theme;
   _qdnLang: Language;
 }
 const customWindow = window as unknown as CustomWindow;
 
 export const useIframe = () => {
   const setTheme = useSetAtom(themeAtom);
-  const setLanguage = useSetAtom(languageAtom);
+  const { i18n } = useTranslation();
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -25,13 +28,17 @@ export const useIframe = () => {
     } else if (themeColorDefault === 'light') {
       setTheme(EnumTheme.LIGHT);
     }
-    const languageDefault: Language = customWindow?._qdnLang;
-    setLanguage(languageDefault || 'en');
+    const languageDefault = customWindow?._qdnLang;
+    if(supportedLanguages?.includes(languageDefault)){
+      i18n.changeLanguage(languageDefault);
+    }
+    
+
     function handleNavigation(event: {
       data: {
         action: string;
         path: To;
-        theme: 'dark' | 'light';
+        theme: Theme;
         language: Language;
       };
     }) {
@@ -54,7 +61,8 @@ export const useIframe = () => {
         event.data?.action === 'LANGUAGE_CHANGED' &&
         event.data.language
       ) {
-        setLanguage(event.data.language);
+        if(!supportedLanguages?.includes(event.data.language)) return
+        i18n.changeLanguage(event.data.language);
       }
     }
 
