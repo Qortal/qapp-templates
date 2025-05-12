@@ -5,6 +5,5 @@ export enum EnumTheme {
   DARK = 2,
 }
 
-
 // Atom to hold the current theme
 export const themeAtom = atom<EnumTheme>(EnumTheme.DARK);
