@@ -10,6 +10,7 @@ import { supportedLanguages } from '../i18n/i18n';
 
 type Language = 'de' | 'en' | 'es' | 'fr' | 'it' | 'ru';
 type Theme = 'dark' | 'light'
+
 interface CustomWindow extends Window {
   _qdnTheme: Theme;
   _qdnLang: Language;
@@ -28,11 +29,12 @@ export const useIframe = () => {
     } else if (themeColorDefault === 'light') {
       setTheme(EnumTheme.LIGHT);
     }
+    
     const languageDefault = customWindow?._qdnLang;
+    
     if(supportedLanguages?.includes(languageDefault)){
       i18n.changeLanguage(languageDefault);
-    }
-    
+    }    
 
     function handleNavigation(event: {
       data: {
