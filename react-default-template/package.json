@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
+    "dev": "vite",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "initialize": "node scripts/initialize.js",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "initialize": "node initialize.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
