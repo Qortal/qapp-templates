@@ -24,8 +24,6 @@ export const supportedLanguages: string[] = Array.from(
   )
 );
 
-
-
 // Construct i18n resources object
 const resources: Record<string, Record<string, any>> = {};
 
