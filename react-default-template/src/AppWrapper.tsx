@@ -1,4 +1,4 @@
-import { Routes } from './Routes';
+import { Routes } from './routes/Routes.tsx';
 import { GlobalProvider } from 'qapp-core';
 import { publicSalt } from './qapp-config.ts';
 
