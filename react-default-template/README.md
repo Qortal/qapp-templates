@@ -52,3 +52,12 @@ export default tseslint.config({
   },
 });
 ```
+
+## Internationalization of the app (I18N)
+
+This template supports internationalization (i18n) using [i18next](https://www.i18next.com/), allowing seamless translation of UI text into multiple languages.
+The setup includes modularized translation files (namespaces), language detection, context and runtime language switching.
+
+Files with translation are in `src/i18n/locales/<locale>` folder.
+
+`core` namespace is already present and active.

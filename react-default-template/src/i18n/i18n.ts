@@ -1,11 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
-const capitalize = {
-  type: 'postProcessor',
-  name: 'capitalize',
-  process: (value: string) => value.charAt(0).toUpperCase() + value.slice(1),
-};
+import { capitalizeAll, capitalizeFirst } from './processors';
 
 // Load all locale JSON files
 const modules = import.meta.glob('./locales/**/*.json', {
@@ -39,7 +34,8 @@ for (const path in modules) {
 
 i18n
   .use(initReactI18next)
-  .use(capitalize as any)
+  .use(capitalizeAll as any)
+  .use(capitalizeFirst as any)
   .init({
     resources,
     fallbackLng: 'en',

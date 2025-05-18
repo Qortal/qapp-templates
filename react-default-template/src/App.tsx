@@ -6,9 +6,18 @@ function App() {
   const { auth } = useGlobal();
   const { t } = useTranslation(['core']);
 
+  // retrieve the theme 'light' or 'dark' from the framework
+  const theme = window._qdnTheme;
+
   return (
     <>
-      <Typography> {t('core:welcome', { postProcess: 'capitalize' })} {auth?.name}</Typography>
+      <Typography>
+        {t('core:welcome', { postProcess: 'capitalizeAll' })} {auth?.name}
+      </Typography>
+
+      <Typography>
+        {t('core:using_theme', { postProcess: 'capitalizeFirst' })} {theme}
+      </Typography>
     </>
   );
 }
