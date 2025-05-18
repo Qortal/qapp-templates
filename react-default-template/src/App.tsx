@@ -16,7 +16,7 @@ function App() {
       </Typography>
 
       <Typography>
-        {t('core:using_theme', { postProcess: 'capitalizeFirst' })} {theme}
+        {t('core:using_theme', { postProcess: 'capitalizeFirstChar' })} {theme}
       </Typography>
     </>
   );
