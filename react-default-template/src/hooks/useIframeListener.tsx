@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { To, useNavigate } from 'react-router-dom';
-import {
-  EnumTheme,
-  themeAtom,
-} from '../state/global/system';
+import { EnumTheme, themeAtom } from '../state/global/system';
 import { useSetAtom } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../i18n/i18n';
