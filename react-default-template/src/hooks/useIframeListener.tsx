@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../i18n/i18n';
 
 type Language = 'de' | 'en' | 'es' | 'fr' | 'it' | 'ru';
-type Theme = 'dark' | 'light'
+type Theme = 'dark' | 'light';
 
 interface CustomWindow extends Window {
   _qdnTheme: Theme;
@@ -26,12 +26,12 @@ export const useIframe = () => {
     } else if (themeColorDefault === 'light') {
       setTheme(EnumTheme.LIGHT);
     }
-    
+
     const languageDefault = customWindow?._qdnLang;
-    
-    if(supportedLanguages?.includes(languageDefault)){
+
+    if (supportedLanguages?.includes(languageDefault)) {
       i18n.changeLanguage(languageDefault);
-    }    
+    }
 
     function handleNavigation(event: {
       data: {
@@ -60,7 +60,7 @@ export const useIframe = () => {
         event.data?.action === 'LANGUAGE_CHANGED' &&
         event.data.language
       ) {
-        if(!supportedLanguages?.includes(event.data.language)) return
+        if (!supportedLanguages?.includes(event.data.language)) return;
         i18n.changeLanguage(event.data.language);
       }
     }
