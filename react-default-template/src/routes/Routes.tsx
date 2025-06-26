@@ -1,8 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from '../styles/Layout';
 import App from '../App';
+import { AppWrapper } from '../AppWrapper';
 
-// Use a custom type if you need it
 interface CustomWindow extends Window {
   _qdnBase: string;
 }
@@ -14,7 +13,7 @@ export function Routes() {
     [
       {
         path: '/',
-        element: <Layout />,
+        element: <AppWrapper />,
         children: [
           {
             index: true,
