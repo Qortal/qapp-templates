@@ -5,7 +5,7 @@ import { useSetAtom } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../i18n/i18n';
 
-type Language = 'ar' | 'de' | 'en' | 'es' | 'fr' | 'it' | 'ru' | 'ja' | 'zh';
+type Language = 'ar' | 'de' | 'en' | 'es' | 'et' | 'fr' | 'it' | 'pt' | 'ru' | 'ja' | 'zh';
 type Theme = 'dark' | 'light';
 
 interface CustomWindow extends Window {
