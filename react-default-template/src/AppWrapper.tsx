@@ -7,7 +7,7 @@ export const AppWrapper = () => {
   return (
     <GlobalProvider
       config={{
-        appName: 'My Qort App',
+        appName: 'My Qort App', // change to your own
         auth: {
           balanceSetting: {
             interval: 180000,
