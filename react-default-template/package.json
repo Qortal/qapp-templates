@@ -20,7 +20,7 @@
     "@mui/material": "^7.0.1",
     "i18next": "^25.1.2",
     "jotai": "^2.12.4",
-    "qapp-core": "^1.0.59",
+    "qapp-core": "^1.0.72",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.5.1",
